@@ -1,0 +1,14 @@
+{
+  "name": "logica-de-programacion",
+  "version": "1.0.0",
+  "description": "logica",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yhojan",
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}
