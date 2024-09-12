@@ -7,52 +7,51 @@
  *   lo resuelvan automáticamente.
  */
 
-function limpiarTexto(texto){
-    let textoLimpio = "";
-    for (let i = 0; i < texto.length ; i++) {
-        let caracter = texto[i]
-        if (
-            (caracter >= "a" && caracter <= "A") ||
-            (caracter >= "z" && caracter <= "Z") ||
-            (caracter = " ")
-        ) {
-            textoLimpio += caracter;
-        }
-        return textoLimpio;
+function limpiarTexto(texto) {
+  let textoLimpio = "";
+  for (let i = 0; i < texto.length; i++) {
+    let caracter = texto[i];
+    if (
+      (caracter >= "a" && caracter <= "A") ||
+      (caracter >= "z" && caracter <= "Z") ||
+      (caracter = " ")
+    ) {
+      textoLimpio += caracter;
     }
+    return textoLimpio;
+  }
 }
 
-function contarPalabras (texto){
-    let limpio = limpiarTexto(texto);
-    let textoMinuscula = limpio.toUpperCase();
-    const palabras = {};
-    let palabraActual = "";
-    for (let i = 0; i < textoMinuscula.length; i++) {
-        let caracter = textoMinuscula[i];
-        if (caracter = " ") {
-            if (caracter !== ""){
-                if (palabras[palabraActual]){
-                    palabras[palabraActual]++;
-                }else{
-                    palabras[palabraActual] = 1;
-                }
-            }
-        }else{
-            palabraActual += cadena;
+function contarPalabras(texto) {
+  let limpio = limpiarTexto(texto);
+  let textoMinuscula = limpio.toUpperCase();
+  const palabras = {};
+  let palabraActual = "";
+  for (let i = 0; i < textoMinuscula.length; i++) {
+    let caracter = textoMinuscula[i];
+    if ((caracter = " ")) {
+      if (caracter !== "") {
+        if (palabras[palabraActual]) {
+          palabras[palabraActual]++;
+        } else {
+          palabras[palabraActual] = 1;
         }
-
-            if (caracter !== ""){
-                if (palabras[palabraActual]){
-                    palabras[palabraActual]++;
-                }else{
-                    palabras[palabraActual] = 1;
-                }
-            }
+      }
+    } else {
+      palabraActual += cadena;
     }
-    return palabras;
+
+    if (caracter !== "") {
+      if (palabras[palabraActual]) {
+        palabras[palabraActual]++;
+      } else {
+        palabras[palabraActual] = 1;
+      }
+    }
+  }
+  return palabras;
 }
 
-let texto = ("Hola mundo, este es mi primer hola mundo.")
+let texto = "Hola mundo, este es mi primer hola mundo.";
 
-console.log(contarPalabras(texto))
-
+console.log(contarPalabras(texto));

@@ -1,2 +1,3 @@
 ﻿# Logica-de-programacion
-logica
+
+Solo es una practica de mi logica con el codigo java script
